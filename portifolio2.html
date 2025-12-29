@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nimrit Gambhir | Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+body{
+  background:#0f172a;
+  color:#e5e7eb;
+}
+h1{
+  font-size: 1000px;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:50px 20px;
+}
+header h1{font-size:36px;}
+header p{color:#94a3b8;margin-top:8px;}
+
+/* SECTIONS */
+section{
+  max-width:1000px;
+  margin:60px auto;
+  padding:0 20px;
+}
+h2{
+  color:#38bdf8;
+  margin-bottom:20px;
+}
+
+/* SKILLS */
+.skill{margin-bottom:18px;}
+.bar{
+  height:8px;
+  background:#1e293b;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:6px;
+}
+.fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#38bdf8,#6366f1);
+  transition:width 1.8s ease;
+}
+
+/* TIMELINE */
+.timeline{
+  border-left:3px solid #38bdf8;
+  padding-left:30px;
+}
+.timeline-item{
+  margin-bottom:30px;
+  opacity:0;
+  transform:translateX(-20px);
+  transition:.6s ease;
+}
+.timeline-year{
+  color:#38bdf8;
+  font-weight:bold;
+}
+
+/* PROJECT GRID */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.project-card{
+  background:#020617;
+  border-radius:14px;
+  padding:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  transition:.3s ease;
+}
+.project-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 40px rgba(56,189,248,.3);
+}
+.project-card h3{
+  color:#38bdf8;
+  margin-bottom:10px;
+}
+.project-card p{
+  color:#cbd5f5;
+  font-size:14px;
+}
+.project-tag{
+  display:inline-block;
+  margin-top:12px;
+  font-size:12px;
+  background:#1e293b;
+  padding:4px 10px;
+  border-radius:20px;
+  color:#94a3b8;
+}
+
+/* AI */
+#aiBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#6366f1;
+  color:#fff;
+  border:none;
+  padding:12px 18px;
+  border-radius:30px;
+  cursor:pointer;
+}
+#aiBox{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  width:320px;
+  background:#020617;
+  border-radius:14px;
+  display:none;
+  flex-direction:column;
+}
+#aiBox.show{
+  display:flex;
+}
+#aiMessages{
+  padding:12px;
+  height:260px;
+  overflow-y:auto;
+  font-size:14px;
+}
+.user-msg{
+  background:#4f46e5;
+  color:white;
+  padding:6px 10px;
+  border-radius:10px;
+  margin:6px 0;
+  align-self:flex-end;
+}
+.ai-msg{
+  background:#1e293b;
+  padding:6px 10px;
+  border-radius:10px;
+  margin:6px 0;
+}
+.ai-input-row{
+  display:flex;
+  gap:6px;
+  padding:8px;
+  border-top:1px solid #1e293b;
+}
+#aiInput{
+  flex:1;
+  padding:8px;
+  border-radius:8px;
+  border:none;
+}
+#voiceBtn,#sendBtn{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  border:none;
+  background:#6366f1;
+  color:white;
+  cursor:pointer;
+}
+#voiceBtn.listening{background:#ef4444;}
+.footer {
+  background: #020617;
+  padding: 40px 20px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.footer-content h3 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.footer-content p {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #38bdf8;
+}
+
+.footer-bottom {
+  font-size: 12px;
+  color: #64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Nimrit Gambhir</h1>
+  <p>Aspiring Software Designer | Frontend Developer</p>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am Nimrit Gambhir, a 14-year-old aspiring software designer and frontend developer. I love building clean, interactive, and user-friendly web experiences using modern technologies.
+
+I am a Class 9 academic topper and have represented myself in multiple competitions. Along with coding, sports like football and skating have helped me build discipline, teamwork, leadership, and focus.
+
+I am highly motivated, curious, and continuously learning by building real-world projects and participating in hackathons and competitions.  
+  </p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+
+  <div class="skill">
+    <span>HTML & CSS</span>
+    <div class="bar"><div class="fill" data-width="90%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>JavaScript</span>
+    <div class="bar"><div class="fill" data-width="80%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Python</span>
+    <div class="bar"><div class="fill" data-width="75%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>UI / UX Design</span>
+    <div class="bar"><div class="fill" data-width="70%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Problem Solving</span>
+    <div class="bar"><div class="fill" data-width="85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Academic Excellence</span>
+    <div class="bar"><div class="fill" data-width="95%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Hackathons & Competitive Coding</span>
+    <div class="bar"><div class="fill" data-width="80%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Skating & Sports Discipline</span>
+    <div class="bar"><div class="fill" data-width="90%"></div></div>
+  </div>
+
+</section>
+
+
+<section>
+  <h2>Achievements Timeline</h2>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-year">2022</div><p>Started coding and web development.</p></div>
+    <div class="timeline-item"><div class="timeline-year">2023</div><p>Built Python games and improved logic.</p></div>
+    <div class="timeline-item"><div class="timeline-year">2024</div><p>Class 9 Topper & 3 Regional Skating Champion.</p></div>
+    <div class="timeline-item"><div class="timeline-year">2025</div><p>National Hackathon Prize Winner.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>Professional animated portfolio with AI assistant and voice input.</p>
+      <span class="project-tag">HTML • CSS • JS</span>
+    </div>
+
+    <div class="project-card">
+      <h3>Hacking UI Demo</h3>
+      <p>Ethical hacking styled interface with animations and alerts.</p>
+      <span class="project-tag">Frontend • UI</span>
+    </div>
+
+    <div class="project-card">
+      <h3>Python Games</h3>
+      <p>Logic-based interactive games developed using Python.</p>
+      <span class="project-tag">Python</span>
+    </div>
+
+    <div class="project-card">
+      <h3>AI Portfolio Assistant</h3>
+      <p>Custom AI system that answers questions about my profile.</p>
+      <span class="project-tag">AI • JavaScript</span>
+    </div>
+  </div>
+</section>
+
+<button id="aiBtn">🤖 AI</button>
+
+<div id="aiBox">
+  <div id="aiMessages"></div>
+  <div class="ai-input-row">
+    <input id="aiInput" placeholder="Ask about Nimrit..." />
+    <button id="voiceBtn">🎤</button>
+    <button id="sendBtn">➤</button>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-content">
+    <h3>Nimrit Gambhir</h3>
+    <p>
+      Aspiring Software Designer & Frontend Developer<br>
+      Building clean, interactive, and impactful digital experiences.
+    </p>
+
+    <div class="footer-links">
+      <a href="#top">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Skills</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Nimrit Gambhir • All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+
+<script>
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".fill").forEach(f=>{
+    if(f.getBoundingClientRect().top<window.innerHeight){
+      f.style.width=f.dataset.width;
+    }
+  });
+  document.querySelectorAll(".timeline-item").forEach(i=>{
+    if(i.getBoundingClientRect().top<window.innerHeight-100){
+      i.style.opacity="1";
+      i.style.transform="translateX(0)";
+    }
+  });
+});
+
+const aiBtn=document.getElementById("aiBtn");
+const aiBox=document.getElementById("aiBox");
+const aiMessages=document.getElementById("aiMessages");
+const aiInput=document.getElementById("aiInput");
+const sendBtn=document.getElementById("sendBtn");
+const voiceBtn=document.getElementById("voiceBtn");
+
+aiBtn.onclick=()=>aiBox.classList.toggle("show");
+
+function addMsg(cls,txt){
+  const d=document.createElement("div");
+  d.className=cls;
+  d.textContent=txt;
+  aiMessages.appendChild(d);
+  aiMessages.scrollTop=aiMessages.scrollHeight;
+}
+function reply(q){
+  q=q.toLowerCase();
+  if(q.includes("project")) return "Portfolio website, hacking UI demo, Python games, AI assistant.";
+  if(q.includes("skill")) return "HTML, CSS, JavaScript, Python, UI/UX, problem-solving.";
+  if(q.includes("achievement")) return "Class 9 topper, skating champion, national hackathon winner.";
+  return "Ask me about Nimrit's skills, projects, or achievements.";
+}
+sendBtn.onclick=()=>{
+  if(!aiInput.value)return;
+  addMsg("user-msg",aiInput.value);
+  addMsg("ai-msg",reply(aiInput.value));
+  aiInput.value="";
+};
+
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+if(SR){
+  const r=new SR();
+  voiceBtn.onclick=()=>{voiceBtn.classList.add("listening");r.start();}
+  r.onresult=e=>{
+    addMsg("user-msg",e.results[0][0].transcript);
+    addMsg("ai-msg",reply(e.results[0][0].transcript));
+  }
+  r.onend=()=>voiceBtn.classList.remove("listening");
+}
+</script>
+
+</body>
+</html>
